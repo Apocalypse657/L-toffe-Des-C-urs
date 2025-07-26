@@ -131,13 +131,79 @@
   </section>
 
   <section id="bonus">
-    <h2>📝 Bonus</h2>
+  <h2>📝 Bonus</h2>
+  
+  <article>
+    <h3>📜 Scènes coupées</h3>
+    <p>Découvrez des passages inédits de l’histoire, retirés lors de la rédaction finale :</p>
+    <blockquote>
+      <p><em>« La princesse regardait le ciel étoilé, se demandant si un jour elle pourrait choisir son propre destin... »</em></p>
+      <p><em>« Solan, dans son atelier, cousait une robe destinée à changer leur avenir. »</em></p>
+    </blockquote>
+  </article>
+  
+  <article>
+    <h3>✉️ Lettres entre les personnages</h3>
+    <p>Les échanges secrets entre Aeris et Solan, leurs mots d’espoir et d’amour :</p>
+    <blockquote>
+      <p><strong>Aeris à Solan :</strong> « Chaque fil que tu tisses me rapproche de toi, même si les murs nous séparent. »</p>
+      <p><strong>Solan à Aeris :</strong> « Ta lumière éclaire mes nuits les plus sombres, bientôt, tout changera. »</p>
+    </blockquote>
+  </article>
+
+  <article>
+    <h3>🎶 Playlist de l’univers</h3>
+    <p>Plongez dans l’atmosphère avec cette sélection musicale inspirée de l’histoire :</p>
     <ul>
-      <li>Scènes coupées</li>
-      <li>Lettres entre les personnages</li>
-      <li>Playlist de l'univers</li>
-      <li>Quiz "Quel personnage es-tu ?"</li>
+      <li><a href="https://www.youtube.com/watch?v=YQHsXMglC9A" target="_blank" rel="noopener" style="color:#ffd1dc;">Hallelujah – Pentatonix</a></li>
+      <li><a href="https://www.youtube.com/watch?v=9E6b3swbnWg" target="_blank" rel="noopener" style="color:#ffd1dc;">River Flows In You – Yiruma</a></li>
+      <li><a href="https://www.youtube.com/watch?v=kmzppqIQH6U" target="_blank" rel="noopener" style="color:#ffd1dc;">Comptine d’un autre été – Yann Tiersen</a></li>
     </ul>
+  </article>
+
+  <article>
+    <h3>❓ Quiz : Quel personnage es-tu ?</h3>
+    <p>Répondez aux questions pour découvrir quel héros de <em>L’Étoffe des Cœurs</em> vous ressemble le plus :</p>
+
+    <form id="quiz-form" style="color:#ffd1dc;">
+      <p><strong>1. Quel est ton trait de caractère principal ?</strong><br />
+        <input type="radio" id="q1a" name="q1" value="a" required />
+        <label for="q1a">Courageux(se)</label><br />
+        <input type="radio" id="q1b" name="q1" value="b" />
+        <label for="q1b">Créatif(ve)</label><br />
+        <input type="radio" id="q1c" name="q1" value="c" />
+        <label for="q1c">Protecteur(trice)</label><br />
+        <input type="radio" id="q1d" name="q1" value="d" />
+        <label for="q1d">Loyal(e)</label>
+      </p>
+
+      <p><strong>2. Quel est ton endroit préféré ?</strong><br />
+        <input type="radio" id="q2a" name="q2" value="a" required />
+        <label for="q2a">Le château</label><br />
+        <input type="radio" id="q2b" name="q2" value="b" />
+        <label for="q2b">L’atelier</label><br />
+        <input type="radio" id="q2c" name="q2" value="c" />
+        <label for="q2c">La forêt</label><br />
+        <input type="radio" id="q2d" name="q2" value="d" />
+        <label for="q2d">Le village</label>
+      </p>
+
+      <p><strong>3. Que préfères-tu faire ?</strong><br />
+        <input type="radio" id="q3a" name="q3" value="a" required />
+        <label for="q3a">Prendre des décisions difficiles</label><br />
+        <input type="radio" id="q3b" name="q3" value="b" />
+        <label for="q3b">Créer et inventer</label><br />
+        <input type="radio" id="q3c" name="q3" value="c" />
+        <label for="q3c">Protéger ceux qu’on aime</label><br />
+        <input type="radio" id="q3d" name="q3" value="d" />
+        <label for="q3d">Être fidèle à ses engagements</label>
+      </p>
+
+      <button type="submit" style="background:#d291bc; color:#fff; border:none; padding:10px 20px; border-radius:10px; cursor:pointer;">Voir mon personnage</button>
+    </form>
+
+    <div id="quiz-result" style="margin-top:1rem; font-weight:bold;"></div>
+  </article>
   </section>
 
   <section id="apropos">
@@ -186,6 +252,45 @@
       playPauseBtn.textContent = '▶️';
     };
   </script>
+<script>
+  const quizForm = document.getElementById('quiz-form');
+  const quizResult = document.getElementById('quiz-result');
 
+  quizForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const answers = {
+      q1: quizForm.q1.value,
+      q2: quizForm.q2.value,
+      q3: quizForm.q3.value,
+    };
+
+    // Comptage des lettres
+    const counts = {a: 0, b: 0, c: 0, d: 0};
+    for (const key in answers) {
+      counts[answers[key]]++;
+    }
+
+    // Détermine la lettre la plus fréquente
+    let maxCount = 0;
+    let maxLetter = 'a';
+    for (const letter in counts) {
+      if (counts[letter] > maxCount) {
+        maxCount = counts[letter];
+        maxLetter = letter;
+      }
+    }
+
+    // Résultats
+    const results = {
+      a: 'Aeris, la princesse courageuse et lumineuse.',
+      b: 'Solan, le couturier créatif et passionné.',
+      c: 'Lioran, le frère protecteur et loyal.',
+      d: 'Éliane, la meilleure amie fidèle et douce.',
+    };
+
+    quizResult.textContent = `Tu es : ${results[maxLetter]}`;
+  });
+</script>
 </body>
 </html>
