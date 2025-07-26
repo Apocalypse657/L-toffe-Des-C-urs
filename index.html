@@ -1,73 +1,121 @@
-<!DOCTYPE html><html lang="fr">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>🧵 L'Étoffe des Cœurs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
-      font-family: 'Georgia', serif;
-      background: #fffaf6;
-      color: #333;
+      font-family: 'Dancing Script', cursive;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
     header {
-      background: linear-gradient(90deg, #e0b0ff, #ffdee9);
-      padding: 1.5rem;
+      background: rgba(100, 0, 150, 0.6);
+      padding: 2rem 1rem;
       text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
+      font-size: 3rem;
+      text-shadow: 0 0 10px #ffb6c1, 0 0 20px #d291bc;
     }
     nav {
       display: flex;
       justify-content: center;
-      gap: 1rem;
-      background: #fbe4ff;
+      background: rgba(150, 50, 150, 0.7);
       padding: 1rem;
+      gap: 1.5rem;
+      font-weight: bold;
+      font-size: 1.2rem;
+      box-shadow: 0 0 20px #d291bc;
     }
     nav a {
+      color: #ffd1dc;
       text-decoration: none;
-      color: #8a2be2;
-      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #fff;
+      text-shadow: 0 0 10px #fff;
     }
     section {
+      max-width: 700px;
+      margin: 2rem auto;
+      background: rgba(60, 10, 80, 0.6);
       padding: 2rem;
-      max-width: 800px;
-      margin: auto;
+      border-radius: 15px;
+      box-shadow: 0 0 30px #d291bc;
     }
-    .banner {
-      background: url('https://example.com/banner.jpg') center/cover no-repeat;
-      color: white;
-      padding: 4rem 2rem;
+    h2 {
+      margin-top: 0;
       text-align: center;
-      font-size: 1.5rem;
-      font-style: italic;
+      text-shadow: 0 0 10px #ffd1dc;
+    }
+    ul {
+      line-height: 1.6;
     }
     footer {
-      background: #fbe4ff;
       text-align: center;
       padding: 1rem;
+      background: rgba(100, 0, 150, 0.6);
+      color: #ffd1dc;
       font-size: 0.9rem;
+      box-shadow: 0 0 15px #d291bc;
+      margin-top: 3rem;
+    }
+    /* Audio player style */
+    #music-player {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(150, 50, 150, 0.8);
+      border-radius: 50px;
+      padding: 10px 15px;
+      box-shadow: 0 0 20px #d291bc;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #ffd1dc;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+    }
+    #music-player:hover {
+      background: rgba(200, 100, 200, 0.9);
+    }
+    #music-player button {
+      background: transparent;
+      border: none;
+      color: #ffd1dc;
+      font-size: 1.2rem;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>🧵 L'Étoffe des Cœurs</h1>
-  </header>  <nav>
+    🧵 L'Étoffe des Cœurs
+  </header>
+
+  <nav>
     <a href="#histoire">L'Histoire</a>
     <a href="#personnages">Personnages</a>
     <a href="#galerie">Galerie</a>
     <a href="#bonus">Bonus</a>
-    <a href="#apropos">A propos</a>
+    <a href="#apropos">À propos</a>
     <a href="#contact">Contact</a>
-  </nav>  <div class="banner">
-    "Un amour cousu de lumière, un royaume tissé de magie."
-  </div>  <section id="histoire">
+  </nav>
+
+  <section id="histoire">
     <h2>📖 L'Histoire</h2>
     <p>Dans un royaume enchanté, une princesse enchaînée à son destin rencontre un couturier du peuple. Ensemble, ils brodent une romance qui bouleversera les lois du royaume et les fils du destin...</p>
-  </section>  <section id="personnages">
+  </section>
+
+  <section id="personnages">
     <h2>✨ Les Personnages</h2>
     <ul>
       <li><strong>Aeris</strong> – La princesse lumineuse et courageuse</li>
@@ -75,10 +123,14 @@
       <li><strong>Lioran</strong> – Frère de la princesse, protecteur</li>
       <li><strong>Éliane</strong> – Meilleure amie et confidente d'Aeris</li>
     </ul>
-  </section>  <section id="galerie">
+  </section>
+
+  <section id="galerie">
     <h2>🎨 Galerie</h2>
     <p>Illustrations originales, croquis des tenues royales, et fanarts seront bientôt disponibles ici !</p>
-  </section>  <section id="bonus">
+  </section>
+
+  <section id="bonus">
     <h2>📝 Bonus</h2>
     <ul>
       <li>Scènes coupées</li>
@@ -86,15 +138,55 @@
       <li>Playlist de l'univers</li>
       <li>Quiz "Quel personnage es-tu ?"</li>
     </ul>
-  </section>  <section id="apropos">
-    <h2>🧠 A propos</h2>
+  </section>
+
+  <section id="apropos">
+    <h2>🧠 À propos</h2>
     <p><em>« Je voulais écrire une histoire d'amour comme un fil d'or cousu sur du lin brut. »</em> — L'autrice</p>
     <p>Ce site présente l'univers de "L'Étoffe des Cœurs" : son histoire, ses héros, ses secrets et ses images.</p>
-  </section>  <section id="contact">
+  </section>
+
+  <section id="contact">
     <h2>💌 Contact</h2>
-    <p>Envie d'écrire à l'autrice ou de partager vos fanarts ? Contactez-nous via <a href="mailto:etoffe.coeurs@mail.com">etoffe.coeurs@mail.com</a></p>
-  </section>  <footer>
+    <p>Envie d'écrire à l'autrice ou de partager vos fanarts ? Contactez-nous via <a href="mailto:etoffe.coeurs@mail.com" style="color:#ffd1dc;">etoffe.coeurs@mail.com</a></p>
+  </section>
+
+  <footer>
     <p>© 2025 L'Étoffe des Cœurs. Tous droits réservés.</p>
   </footer>
+
+  <div id="music-player" title="Musique d'ambiance">
+    <button id="play-pause" aria-label="Play/Pause">▶️</button>
+    <span>Musique douce</span>
+  </div>
+
+  <audio id="audio" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/25/audio_7fca6a4340.mp3?filename=relaxing-piano-music-6147.mp3" type="audio/mpeg">
+    Votre navigateur ne supporte pas l'élément audio.
+  </audio>
+
+  <script>
+    const audio = document.getElementById('audio');
+    const playPauseBtn = document.getElementById('play-pause');
+    let playing = false;
+
+    playPauseBtn.addEventListener('click', () => {
+      if (playing) {
+        audio.pause();
+        playPauseBtn.textContent = '▶️';
+      } else {
+        audio.play();
+        playPauseBtn.textContent = '⏸️';
+      }
+      playing = !playing;
+    });
+
+    // Démarrer la musique automatiquement, mais en pause (pour éviter autoplay bloqué)
+    window.onload = () => {
+      audio.pause();
+      playPauseBtn.textContent = '▶️';
+    };
+  </script>
+
 </body>
 </html>
